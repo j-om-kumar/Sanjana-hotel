@@ -1,0 +1,23 @@
+generator client {
+  provider = "prisma-client-py" // If using Python. For JS/TS, use "prisma-client-js".
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = "postgresql://omkumar:12345678@localhost:5432/hotel"
+
+}
+
+model Asset {
+  id             String                    @id @default(uuid())
+  name      String   
+  value     Int
+}
+
+model CheckIn {
+  id             String                    @id @default(uuid())
+  date           String
+  customerName   String 
+  assetName      String 
+  assetValue     Int 
+}
